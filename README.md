@@ -2,7 +2,7 @@
 Repository for CSA project group D
 
 Members:
-- David
-- Samir
-- Farid
-- Habil
+- David Ahmadov
+- Samir Dadash-zada
+- Farid Jafarov
+- Habil Gadirli
