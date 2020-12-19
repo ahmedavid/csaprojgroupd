@@ -23,7 +23,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   </lib>
   <lib desc="file#control_unit.circ" name="7"/>
   <lib desc="file#given/RegisterFile.circ" name="8"/>
-  <lib desc="file#C:\Users\Admin\Downloads\ALU.circ" name="9"/>
+  <lib desc="file#given/ALU.circ" name="9"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -371,6 +371,7 @@ e2813002
     </comp>
     <comp loc="(420,570)" name="32_8_adapter"/>
     <comp loc="(1440,600)" name="32_8_adapter"/>
+    <comp lib="9" loc="(1150,580)" name="ALU"/>
     <comp lib="0" loc="(880,230)" name="Tunnel">
       <a name="width" val="2"/>
       <a name="label" val="immsrct"/>
@@ -397,7 +398,6 @@ e2813002
       <a name="width" val="32"/>
       <a name="label" val="datat"/>
     </comp>
-    <comp lib="9" loc="(1150,580)" name="ALU"/>
     <comp lib="7" loc="(750,100)" name="main"/>
     <comp loc="(850,730)" name="Extend"/>
     <comp lib="2" loc="(690,550)" name="Multiplexer">
