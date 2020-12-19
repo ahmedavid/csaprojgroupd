@@ -1,0 +1,4 @@
+ADD R0, R0, #10 ; add 0 and 10. save result to R0
+ADD R1, R1, #7	; add 0 and 7. save result to R1
+SUB R2, R0, R1	; subtract 7 from 10 and save it to R2
+		; As a result R2 should have 3
