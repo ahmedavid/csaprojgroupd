@@ -455,7 +455,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="contents">addr/data: 8 32
 e280000a 0 0 0 e2811007 0 0 0
 e0402001 0 0 0 e2123000 0 0 0
-1804001
+104001 0 0 0 13805005
 </a>
     </comp>
   </circuit>
