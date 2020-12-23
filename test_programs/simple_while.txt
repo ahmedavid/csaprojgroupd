@@ -1,0 +1,18 @@
+int i = 5;
+int val = 0;
+while(i > 0) {
+    val++;
+    i--;
+}
+
+// Use ADD as MOV because we dont have MOV instr
+// Assume R0 as 0 , dummy register
+        ADD R1, R0, #0 // val = 0
+        ADD R5, R0, #5 // i = 5
+loop    SUBS R5, R5, #0 // Dont have CMP use SUBS
+        BEQ stop
+        ADD R1, R1, #1 // val++
+        SUB R5, R5, #1 // i--
+        BNE loop
+
+stop B stop  // END
