@@ -1,10 +1,11 @@
-LDR R0, =8		; load 8 to R0
+ADD R0, R0, #8		; load 8 to R0
 ADDS R1, R0, #9		; add 8 and 9, save result to R1
 SUBGT R2, R1, #3	; subtract 3 from 17 and save it to R2. It will be executed since  N, Z, and V is 0
 SUBLT R2, R1, #2	; wont execute since N and V flags are 0 and LT check if N xor V
-STR R2, [R0, #40]	; store 14 to memory adress 12
-LDR R4, [R0, #40]	; load value of memory address 12 to R4. Value is 14
+STR R2, [R0, #4]	; store 14 to memory adress 12
+ADD R3, R3, #4		; load 4 to R3
+LDR R4, [R0, R3]	; load value of memory address 12 to R4. Value is 14
 SUBS R5, R4, #15	; subtract 15 from 14 and save it to R5
 ADDLT R6, R5, R4	; add -1 and 14, save result to R6
 
-			; result should be: R0 = 8, R1 = 17, R2 = 14, R4 = 14, R5 = -1, R6 = 13 
+			; result should be: R0 = 8, R1 = 17, R2 = 14, R3 = 4, R4 = 14, R5 = -1, R6 = 13 
