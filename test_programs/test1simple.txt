@@ -1,0 +1,11 @@
+	ADD R0, 0x50  ;R0 = 50
+	ADD R1, 0x25  ;R1 = 25
+	ADD R3, 0x75  ;R3 = 75
+	
+	ADDNE R1, R1, R0 ; if(R1!=R0) R1 = R1 + R0
+	SUBGT R3, R3, R0 ; if(R3>R0)  R3 = R3 - R0
+	AND R6, R3, R4   
+	ORR R7, R0, R1
+
+	;Answers: R1 = 75, R3 = 25
+	;Answers: R6 = 0 , R7 = 75 
