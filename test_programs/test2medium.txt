@@ -1,9 +1,10 @@
-	ADD R0, 0x210  ;R0 = 210
-	ADD R1, 0x30  ;R1 = 30
-	ADD R3, 0x0   ;R3 = 0
+	ADD R0, 210  ;R0 = 210
+	ADD R1, 30  ;R1 = 30
+	ADD R3, 0   ;R3 = 0
 FOR
 	SUBS R0, R0, R1 ;R0 = R0 - R1
-	BEQ TARGET
+	BLT TARGET
 	ADD R3, R3, 1
-	B FOR ;Answer: R3 = A
+	B FOR ;Answer: R3 = 7 = 210 / 30
 TARGET
+
