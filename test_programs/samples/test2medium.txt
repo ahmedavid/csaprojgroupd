@@ -7,4 +7,4 @@ FOR
 	ADD R3, R3, 1
 	B FOR ;Answer: R3 = 7 = 210 / 30
 TARGET
-
+stop    B stop ;make PC wait
