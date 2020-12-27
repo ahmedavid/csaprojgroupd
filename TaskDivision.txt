@@ -1,4 +1,0 @@
-1.	David dealt with Main decoder, Program counter and combine all subcomponents to achieve final single Cycle CPU circuit. And also, he wrote tests. 
-2.	Samir dealt with ALU decoder, Function encoder and helped other parts of main circuit. 
-3.	Habil dealt with ALU decoder, Flag decoder and mainly challenged with test, converted them into machine format. 
-4.	Farid dealt with Conditional logic, condition check and mainly challenged with test, converted them into machine format.
