@@ -17,10 +17,12 @@ After each test file we reset register values to 0 to see the exact results fore
 This file can be added into instruction memory like: 
 
 1.
-![First](https://drive.google.com/uc?export=view&id=1geaBQo_pR8ASlXVD4HMQw4NKmf5Wt8VL)
+![First](https://drive.google.com/uc?export=view&id=1sW6dW8s8nhLqf1qOnOtO1wdOL5jHZENf)
 
 2.
 ![Second](https://drive.google.com/uc?export=view&id=1PSAlIjqiMAS9qQo_VccMLIT3UOlgCxQC)
+
+## Simulation
 
 And then run simulation either with Tick once or Tick enabled:
 ![Run simulation](https://drive.google.com/uc?export=view&id=1geaBQo_pR8ASlXVD4HMQw4NKmf5Wt8VL)
