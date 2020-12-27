@@ -9,7 +9,7 @@ To execute the tests which are included in the project deliverable, follow these
 	2. Right click on the ROM
 	3. Select Edit Contents. As a result Hex Edior window should be visible
 	4. In the Hex Editor window press "open" button
-	5. Select the test that needs to be executed
+	5. Select test_program_all(or any other test) file from test folder
 	6. Close the Hex Editor window
 	7. In Logisim press the Simulate dropdown and in the dropdown press the Ticks Enabled button 
 
