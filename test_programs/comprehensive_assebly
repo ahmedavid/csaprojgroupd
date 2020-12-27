@@ -1,0 +1,47 @@
+		AREA TEST, CODE, READONLY
+		
+		ENTRY
+		
+		ADD R1, R0, #0x40000000			;; Array Start Address (Utilize ADD to assign initial values, Assume R0 = 0)
+		ADD R2, R0, #0 					;; Array Offset
+		ADD R3, R0, #5 					;; Array Len = 5
+		ADD R4, R0, #0 					;; Max number
+		ADD R5, R0, #10				;; Min number
+		
+max		SUBS R3, R3, #0					;; This loop finds max and min number in array
+		BEQ maxend
+		
+		LDR R6, [R1, R2]				;; Load next element from array, R6 holds currently loaded number from array
+		
+		SUBS R7, R6, R4					;; Compare current number with max , R7 dummy register
+		ADDGT R4, R6, #0				;; If current num(R6) is greater assign to R4
+		
+		SUBS R7, R6, R5					;; Compare current number with min , R7 dummy register
+		ADDLT R5, R6, #0				;; If current num(R6) is less assign to R5
+		
+		ADD R2, R2, #4					;; Increment memory pointer
+		SUB R3, R3, #1					;; decrement loop counter
+		B max							;; At the end of the loop we have max and min numbers in array
+		
+maxend
+
+		SUB R8, R4, R5 					;; max - min
+		ADD R2, R0, #0					;; reset memory pointer
+		ADD R3, R0, #5					;; reset loop counter
+		
+loop	SUBS R3, R3, #0					;; In this loop we will zero out all values in array ,less than (max - min)
+		BEQ stop
+		LDR R6, [R1, R2]
+		
+		SUBS R7, R6, R8					;; Compare current number with (max - min)
+		ANDLT R6, R6, R8				;; If greater AND the result
+		ORRGT R6, R6, R8
+		
+		STR R6, [R1, R2]				;; Store element back to array
+		
+		ADD R1, R1, #4					;; Increment memory pointer		
+		SUB R3, R3, #1					;; decrement loop counter
+		B loop
+
+				
+stop B stop
