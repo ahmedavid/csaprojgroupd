@@ -1,16 +1,16 @@
 # Test programs for Single Cycle Processor
 
 ## All in one
-In [test_program_all](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/test_program_all) all [sample test programs](https://github.com/ahmedavid/csaprojgroupd/tree/main/test_programs/samples) are summed up in one place.
+In [test_program_all](https://github.com/ahmedavid/csaprojgroupd/blob/main/test/test_program_all) all [extra tests](https://github.com/ahmedavid/csaprojgroupd/tree/main/extra_tests) are summed up in one place.
 
 There is an hierarchy of sample tests added into test_program_all:
 
-1.	[simple_add](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/simple_add)
-2.	[data_instr](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/data_instr)
-3.	[mem_instr](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/mem_instr)
-4.	[test1Simple](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/test1Simple)
-5.	[simple_while](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/simple_while)
-6.	[test2medium](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/samples/test2medium)
+1.	[simple_add](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/simple_add)
+2.	[data_instr](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/data_instr)
+3.	[mem_instr](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/mem_instr)
+4.	[test1Simple](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/test1Simple)
+5.	[simple_while](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/simple_while)
+6.	[test2medium](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/samples/test2medium)
 
 After each test file we reset register values to 0 to see the exact results foreach test program.
 
@@ -30,5 +30,5 @@ And then run simulation either with Tick once or Tick enabled:
 ## Additionals
 
 Besides above there are 2 more test programs available in test_programs directory:
-  * [Fibonacci](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/fibonacci)
-  * [Comprehensive](https://github.com/ahmedavid/csaprojgroupd/blob/main/test_programs/comprehensive)
+  * [Fibonacci](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/fibonacci)
+  * [Comprehensive](https://github.com/ahmedavid/csaprojgroupd/blob/main/extra_tests/comprehensive)
