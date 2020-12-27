@@ -7,5 +7,5 @@
 	AND R6, R3, R4   
 	ORR R7, R0, R1
 
-	;Answers: R1 = 75, R3 = 25
+	;Answers: R1 = 75, R3 = 75
 	;Answers: R6 = 0 , R7 = 75 

@@ -1,0 +1,94 @@
+	;PROGRAM_1:simple_add
+	ADD R3, R1, #2 		;First and the simplest one, Answer:R3 = 2
+	;resetting values of registers
+	SUB R3, R3, R3    	;R3 = 0 = R3 - R3
+
+	;PROGRAM_2:data_instr
+	ADD R0, R0, #10 	; add 0 and 10. save result to R0
+	ADD R1, R1, #7		; add 0 and 7. save result to R1
+	SUB R2, R0, R1		; subtract 7 from 10 and save it to R2
+	ANDS R3, R2, #0		; and 3 and 0 hence result will be 0 and Z will be set to 1
+	ANDEQS R4, R0, R1	; and 10 and 7 which should result in 2 and z will be set to 0
+	ORRNE R5, R0, #5	; or 5 and 10 which should result in F
+	
+			        ; result should be: R0 = A, R1 = 7, R2 = 3, R3 = 0, R4 = 2, R5 = F
+	;resetting values of registers
+	SUB R0, R0, R0    	;R0 = 0 = R0 - R0
+	SUB R1, R1, R1    	;R1 = 0 = R1 - R1
+	SUB R2, R2, R2    	;R2 = 0 = R2 - R2
+	SUB R3, R3, R3    	;R3 = 0 = R3 - R3
+	SUB R4, R4, R4    	;R4 = 0 = R4 - R4
+	SUB R5, R5, R5    	;R5 = 0 = R5 - R5
+
+	;PROGRAM_3:mem_instr
+	ADD R0, R0, #8		; load 8 to R0
+	ADDS R1, R0, #9		; add 8 and 9, save result to R1
+	SUBGT R2, R1, #3	; subtract 3 from 17 and save it to R2. It will be executed since  N, Z, and V is 0
+	SUBLT R2, R1, #2	; wont execute since N and V flags are 0 and LT check if N xor V
+	STR R2, [R0, #4]	; store 14 to memory adress 12
+	ADD R3, R3, #4		; load 4 to R3
+	LDR R4, [R0, R3]	; load value of memory address 12 to R4. Value is 14
+	SUBS R5, R4, #15	; subtract 15 from 14 and save it to R5
+	ADDLT R6, R5, R4	; add -1 and 14, save result to R6
+
+				; result should be: R0 = 8, R1 = 17, R2 = 14, R3 = 4, R4 = 14, R5 = -1, R6 = 13 
+
+	;resetting values of registers
+	SUB R0, R0, R0    	;R0 = 0 = R0 - R0
+	SUB R1, R1, R1    	;R1 = 0 = R1 - R1
+	SUB R2, R2, R2    	;R2 = 0 = R2 - R2
+	SUB R3, R3, R3    	;R3 = 0 = R3 - R3
+	SUB R4, R4, R4    	;R4 = 0 = R4 - R4
+	SUB R5, R5, R5    	;R5 = 0 = R5 - R5
+	SUB R6, R6, R6    	;R6 = 0 = R6 - R6
+	
+	;PROGRAM_4:test1Simple
+	ADD R0, 0x50  		;R0 = 50
+	ADD R1, 0x25  		;R1 = 25
+	ADD R3, 0x75  		;R3 = 75
+	
+	ADDNE R1, R1, R0 	;if(R1!=R0) R1 = R1 + R0
+	SUBGT R3, R3, R0 	;if(R3>R0)  R3 = R3 - R0
+	AND R6, R3, R4   
+	ORR R7, R0, R1
+				;Answers: R1 = 75, R3 = 75, R6 = 0 , R7 = 75 
+	
+	;resetting values of registers
+	SUB R0, R0, R0    	;R0 = 0 = R0 - R0
+	SUB R1, R1, R1    	;R1 = 0 = R1 - R1
+	SUB R3, R3, R3    	;R3 = 0 = R3 - R3
+	SUB R4, R4, R4    	;R4 = 0 = R4 - R4
+	SUB R6, R6, R6    	;R6 = 0 = R6 - R6
+	SUB R7, R7, R7    	;R7 = 0 = R7 - R7
+
+	;PROGRAM_5:simple_while
+				;Use ADD as MOV because we dont have MOV instr
+				;Assume R0 as 0 , dummy register
+        ADD R1, R0, #0 		;val = 0
+        ADD R5, R0, #5 		;i = 5
+loop    SUBS R5, R5, #0 	;Dont have CMP use SUBS
+        BEQ stop
+        ADD R1, R1, #1 		;val++
+        SUB R5, R5, #1 		;i--
+        BNE loop
+stop
+				;Answers: R5 = 0, R1 = 5
+	
+	;resetting values of registers
+	SUB R1, R1, R1    	;R1 = 0 = R1 - R1
+	SUB R5, R5, R5     	;R5 = 0 = R5 - R5
+
+	;PROGRAM_6:test2medium
+	ADD R0, 210 		;R0 = 210
+	ADD R1, 30  		;R1 = 30
+	ADD R3, 0   		;R3 = 0
+FOR
+	SUBS R0, R0, R1		;R0 = R0 - R1
+	BLT TARGET
+	ADD R3, R3, 1
+	B FOR 			;Answer: R3 = 7 = 210 / 30
+TARGET
+STOPP B STOPP			;make PC wait
+	END
+	
+	

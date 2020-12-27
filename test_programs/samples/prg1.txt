@@ -1,5 +1,0 @@
-	00 LDR [R0,#1] R1
-	04 STR [R0,#1] R2
-there	08 ADD R3, R1, #2
-	0C B there
-	14 ADD R3, R1,R3
