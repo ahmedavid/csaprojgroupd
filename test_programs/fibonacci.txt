@@ -31,4 +31,4 @@ arg_equals_1
 		ADD R4, R4, #1					; make result 1
 		B stop
 
-Final result 13 will be saved to R4
+;Final result 13 will be saved to R4
