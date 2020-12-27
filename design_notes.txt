@@ -30,9 +30,9 @@ Below are the descriptions of the components which together make up the single c
 	   PCSrc decides which signal will update PC: +4 or instruction result. RegWrite decides whether as a result of instruction Address 3 should be updated or not. And MemWrite decides whether
 	   Memory should be updated as a result of an instruction or not.
 5. Register File:
-	Regsiter file is responsible for reading the values of the registers and also writing a value back to the specified register.
+	Regsiter file is responsible for reading the values of the registers and also writing a value back to the specified register if RegWrite signal is set to 1.
 6. Extender:
-	Extends the immediate value up to 32 bits. For Data Processing instructions it extends 8 bit unsigned immediate, for Memory instructions it extends 12 bit unsigned immediate and for Branch instructions it extends 24 bit signed immediate 
+	Extender extends the immediate value up to 32 bits. For Data Processing instructions it extends 8 bit unsigned immediate, for Memory instructions it extends 12 bit unsigned immediate and for Branch instructions it extends 24 bit signed immediate 
 which is multiplied by 4.
 7. ALU:
-	ALU supports and, or, addition, and subtraction operations which can be determined by ALUControl. It also produces ALUFlags such as N, Z, V, C which later can be used by cpu for conditional execution.
+	ALU supports "and", "or", "addition", and "subtraction" operations which can be determined by ALUControl. It also produces ALUFlags such as N, Z, V, C which later can be used by cpu for conditional execution.
